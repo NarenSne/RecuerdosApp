@@ -57,8 +57,9 @@ class _AuthScreenState extends State<AuthScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: scriptFont,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 52,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 48,
                       color: scheme.primary,
                     ),
                   ),

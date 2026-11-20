@@ -82,24 +82,25 @@ flutter:
 
   # Tipografías incluidas en la app (funcionan sin internet). Licencia OFL.
   fonts:
-    - family: Nunito
+    - family: Inter
       fonts:
-        - asset: assets/fonts/Nunito-Regular.ttf
-        - asset: assets/fonts/Nunito-SemiBold.ttf
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Nunito-Bold.ttf
+        - asset: assets/fonts/Inter-Bold.ttf
           weight: 700
-    - family: Playfair Display
+    - family: Fraunces
       fonts:
-        - asset: assets/fonts/PlayfairDisplay-SemiBold.ttf
+        - asset: assets/fonts/Fraunces-Regular.ttf
+        - asset: assets/fonts/Fraunces-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Fraunces-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/PlayfairDisplay-SemiBoldItalic.ttf
+        - asset: assets/fonts/Fraunces-SemiBoldItalic.ttf
           weight: 600
           style: italic
-    - family: Dancing Script
-      fonts:
-        - asset: assets/fonts/DancingScript-SemiBold.ttf
-          weight: 600
 
   # To add assets to your application, add an assets section, like this:
   # assets:

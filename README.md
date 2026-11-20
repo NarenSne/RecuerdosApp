@@ -10,7 +10,7 @@ App para iPhone y Android (Flutter) para guardar recuerdos de pareja —qué pas
 - **3 favoritos** compartidos, arriba de la lista de recuerdos.
 - **Inicio de sesión con Google** (gratis). Las cuentas las maneja Supabase Auth; los recuerdos siguen solo en el teléfono.
 - **"RECUERDOS con:"** y el apodo que cada uno le pone a su pareja (solo se ve en su teléfono). Se toca el encabezado para cambiarlo.
-- **Tipografía**: Nunito para el texto, Playfair Display para títulos y Dancing Script para nombres. Van incluidas en `assets/fonts` (licencia OFL), así que funcionan sin internet.
+- **Tipografía**: Inter para el texto y Fraunces para títulos y nombres (en cursiva). Van incluidas en `assets/fonts` con su licencia OFL, así que funcionan sin internet.
 - La app se usa solo en **vertical**.
 - **Post para Instagram**: al guardar un recuerdo con fotos o videos nuevos, la app arma el carrusel (portada = primera foto, fotos recortadas a 4:5 de 1080 × 1350, hasta 20 elementos, con el texto listo). Se puede reordenar, compartir directo o guardar en Fotos.
 

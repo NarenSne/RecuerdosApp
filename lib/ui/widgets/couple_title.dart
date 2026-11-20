@@ -122,7 +122,8 @@ class CoupleTitle extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontFamily: scriptFont,
-                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w400,
                         fontSize: name == null ? 28 : 36,
                         height: 1.15,
                         color: name == null

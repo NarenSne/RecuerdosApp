@@ -99,6 +99,7 @@ class MemoriesScreen extends StatelessWidget {
       floatingActionButton: memories.isEmpty
           ? null
           : FloatingActionButton.extended(
+              heroTag: 'fab-nuevo-recuerdo',
               onPressed: () => _new(context),
               icon: const Icon(Icons.add),
               label: const Text('Nuevo recuerdo'),

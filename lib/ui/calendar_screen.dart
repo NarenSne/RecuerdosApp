@@ -77,7 +77,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
           ),
         ],
       ),
+      // Etiqueta propia: las pestañas viven juntas en un IndexedStack y dos
+      // botones con la etiqueta por defecto rompen la animación al cambiar
+      // de pantalla.
       floatingActionButton: FloatingActionButton.extended(
+        heroTag: 'fab-nueva-cita',
         onPressed: _newAppointment,
         icon: const Icon(Icons.add),
         label: const Text('Nueva cita'),

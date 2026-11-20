@@ -2,30 +2,85 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-/// Terracota: cálido, como una foto impresa. Un solo acento en toda la app.
-const _seed = Color(0xFFB4533C);
+/// Paleta "Papel y girasol": fondo crema, texto tinta y un solo acento
+/// amarillo. El amarillo puro (#D9A21B) no se lee sobre crema, así que en
+/// textos y botones se usa su versión ocre.
+ColorScheme _paperScheme(Brightness brightness) {
+  final base = ColorScheme.fromSeed(
+    seedColor: const Color(0xFFD9A21B),
+    brightness: brightness,
+    dynamicSchemeVariant: DynamicSchemeVariant.neutral,
+  );
+  if (brightness == Brightness.light) {
+    return base.copyWith(
+      primary: const Color(0xFF8A6410),
+      onPrimary: const Color(0xFFFFFFFF),
+      primaryContainer: const Color(0xFFF5E6BC),
+      onPrimaryContainer: const Color(0xFF3D2C05),
+      secondary: const Color(0xFF6B665E),
+      onSecondary: const Color(0xFFFFFFFF),
+      secondaryContainer: const Color(0xFFEFEADF),
+      onSecondaryContainer: const Color(0xFF1F1D1A),
+      tertiary: const Color(0xFF8C857A),
+      onTertiary: const Color(0xFFFFFFFF),
+      tertiaryContainer: const Color(0xFFEFEADF),
+      onTertiaryContainer: const Color(0xFF1F1D1A),
+      surface: const Color(0xFFFAF8F3),
+      onSurface: const Color(0xFF1F1D1A),
+      onSurfaceVariant: const Color(0xFF6B665E),
+      surfaceContainerLowest: const Color(0xFFFFFFFF),
+      surfaceContainerLow: const Color(0xFFFFFFFF),
+      surfaceContainer: const Color(0xFFF4F1EA),
+      surfaceContainerHigh: const Color(0xFFEFEBE3),
+      surfaceContainerHighest: const Color(0xFFE9E5DC),
+      outline: const Color(0xFFA39D92),
+      outlineVariant: const Color(0xFFE8E4DC),
+    );
+  }
+  return base.copyWith(
+    primary: const Color(0xFFE9B949),
+    onPrimary: const Color(0xFF2B1F05),
+    primaryContainer: const Color(0xFF4A3A12),
+    onPrimaryContainer: const Color(0xFFF6E3B0),
+    secondary: const Color(0xFFA8A196),
+    onSecondary: const Color(0xFF1F1D1A),
+    secondaryContainer: const Color(0xFF34312C),
+    onSecondaryContainer: const Color(0xFFEDE9E1),
+    tertiary: const Color(0xFFA8A196),
+    onTertiary: const Color(0xFF1F1D1A),
+    tertiaryContainer: const Color(0xFF34312C),
+    onTertiaryContainer: const Color(0xFFEDE9E1),
+    surface: const Color(0xFF161513),
+    onSurface: const Color(0xFFEDE9E1),
+    onSurfaceVariant: const Color(0xFFA8A196),
+    surfaceContainerLowest: const Color(0xFF100F0E),
+    surfaceContainerLow: const Color(0xFF1E1C1A),
+    surfaceContainer: const Color(0xFF232120),
+    surfaceContainerHigh: const Color(0xFF2A2825),
+    surfaceContainerHighest: const Color(0xFF33302C),
+    outline: const Color(0xFF7A7469),
+    outlineVariant: const Color(0xFF34312C),
+  );
+}
 
 /// Texto general.
-const bodyFont = 'Nunito';
+const bodyFont = 'Inter';
 
 /// Títulos y "RECUERDOS con:".
-const titleFont = 'Playfair Display';
+const titleFont = 'Fraunces';
 
-/// Nombres: el apodo de la pareja y el nombre de la app.
-const scriptFont = 'Dancing Script';
+/// Nombres: el apodo de la pareja y el nombre de la app (Fraunces en
+/// cursiva).
+const scriptFont = 'Fraunces';
 
 ThemeData buildTheme(Brightness brightness) {
-  final scheme = ColorScheme.fromSeed(
-    seedColor: _seed,
-    brightness: brightness,
-    dynamicSchemeVariant: DynamicSchemeVariant.tonalSpot,
-  );
+  final scheme = _paperScheme(brightness);
   final plain = ThemeData(
     colorScheme: scheme,
     useMaterial3: true,
     fontFamily: bodyFont,
   );
-  // Títulos grandes en serif elegante; el resto en Nunito, redonda y legible.
+  // Títulos grandes en Fraunces; el resto en Inter, sobria y legible.
   TextStyle? serif(TextStyle? s) =>
       s?.copyWith(fontFamily: titleFont, fontWeight: FontWeight.w600);
   final t = plain.textTheme;
@@ -37,9 +92,9 @@ ThemeData buildTheme(Brightness brightness) {
     headlineMedium: serif(t.headlineMedium),
     headlineSmall: serif(t.headlineSmall),
     titleLarge: serif(t.titleLarge),
-    titleMedium: t.titleMedium?.copyWith(fontWeight: FontWeight.w700),
-    titleSmall: t.titleSmall?.copyWith(fontWeight: FontWeight.w700),
-    labelLarge: t.labelLarge?.copyWith(fontWeight: FontWeight.w700),
+    titleMedium: t.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+    titleSmall: t.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+    labelLarge: t.labelLarge?.copyWith(fontWeight: FontWeight.w600),
   );
   final base = plain.copyWith(textTheme: textTheme);
   return base.copyWith(

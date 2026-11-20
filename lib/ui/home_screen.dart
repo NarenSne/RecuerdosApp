@@ -23,7 +23,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    _startPolling();
+    // Después del primer cuadro: sincronizar avisa a la pantalla y no se
+    // puede hacer mientras Flutter todavía la está construyendo.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _startPolling();
+    });
   }
 
   /// Mientras la app está abierta, revisa el buzón cada minuto.
