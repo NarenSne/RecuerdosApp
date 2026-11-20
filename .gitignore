@@ -1,0 +1,40 @@
+# Archivos del sistema y del editor
+.DS_Store
+*.swp
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.history
+
+# Flutter y Dart: todo esto se genera al compilar
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+/coverage/
+
+# Símbolos de depuración y compilaciones
+app.*.symbols
+app.*.map.json
+*.ipa
+*.apk
+*.aab
+*.dSYM/
+
+# Android: firma de release (nunca subir la llave)
+/android/app/debug
+/android/app/profile
+/android/app/release
+*.jks
+*.keystore
+key.properties
+
+# Configuración local con credenciales (nunca subir)
+.env
+.env.*
